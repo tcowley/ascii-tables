@@ -50,7 +50,7 @@
       -->
 
       <div class="col-xs-3">
-        <form>
+        <div class="form-horizontal">
           <div class="form-group">
             <label for="hdr-style" class="control-label" title="Select what should be used as a header">Header
               Location:
@@ -132,19 +132,16 @@
               title="Identify character for custom separator, default is the tab character">Custom Separator:
             </label>
             <input id="separator" type="text" name="separator" maxlength="1" size="3"
-              onfocus="this.value = '';createTable()" onkeyup="createTable()" />
+              onfocus="this.value = ''" onkeyup="createTable()" >
           </div>
 
           <div class="form-group">
-            <button id="create-table" class="btn btn-block btn-primary" onclick="createTable()">
-              Create Table </button>
-            <button class="btn btn-block btn-secondary" onclick="parseTableClick()">
-              Parse Output </button>
-            <button class="btn btn-block btn-secondary" onclick="copyOutputToClipboard()">
-              Copy Output </button>
+            <!-- <button id="create-table" class="btn btn-block btn-primary" onclick="createTable()"> Create Table </button> -->
+            <!-- <button class="btn btn-block btn-secondary" onclick="parseTableClick()"> Parse Output </button> -->
+            <button class="btn btn-block btn-primary" onclick="copyOutputToClipboard()"> Copy Output </button>
           </div>
 
-        </form>
+        </div>
       </div>
 
       <!--
@@ -154,7 +151,7 @@
       -->
 
       <div class="col-xs-9">
-        <textarea class="form-control fixed-width " rows="8" placeholder="Input" wrap="off" id="input"
+        <textarea class="form-control fixed-width " rows="13" placeholder="Input" wrap="off" id="input"
           onchange="createTable()" onkeyup="createTable()">Col1	Col2	Col3	Numeric Column
 Value 1	Value 2	123	10.0
 Separate	cols    with a tab or 4 spaces	-2,027.1
@@ -162,7 +159,7 @@ This is a row with only one cell</textarea>
 
 
         <div id="outputText">
-          <textarea id="output" class="form-control fixed-width" rows="12" placeholder="Output" wrap="off"></textarea>
+          <textarea id="output" class="form-control fixed-width" rows="16" placeholder="Output" wrap="off"></textarea>
         </div>
 
         <div id="outputTbl" class="row"></div>

@@ -368,7 +368,9 @@ function createTable() {
     var output = "";
 
     // echo comment wrapper if any
-    output += commentbefore + "\n";
+    if (commentbefore ) {
+        output += commentbefore + "\n";
+    }
 
     // output the top most row
     // Ex: +---+---+
@@ -614,12 +616,11 @@ function _pad(text, length, char, align) {
 }
 
 function _repeat(str, num) {
-    return new Array(num + 1).join(str);
+    return new Array((num || 0) + 1).join(str);
 }
 
 function copyOutputToClipboard() {
     const output = $('#output').val();
-    
     if (navigator.clipboard) {
         navigator.clipboard.writeText(output).catch(e => console.error('Cannot write to clipboard', e));
     } else {
